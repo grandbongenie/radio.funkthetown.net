@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkthetown Radio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<img src="ftradio.png" alt="Radio" id="radioImage" style="cursor: pointer;">
+<H1>Don't Connect to the Wrong Radio</H1>
+<p>Bientôt en Emission</p>
+
+<form action="/" method="post">
+		    <div class="email-box">
+			<div>
+			<div class="label">Etre Tenu au Courant</div>	
+			<i class="fas fa-envelope"></i>
+			<input id="email" class="tbox" type="email" name="email" value="" placeholder="Email">
+			</div>
+			<button id="emailSend" class="btn" type="submit" name="submit">Join</button>
+		  
+		</form>
+
+<!-- Élément audio (caché) -->
+<audio id="monSon" src="FTR_INTRO.wav"></audio>
+
+<script>
+    // Récupération des éléments
+    const image = document.getElementById('radioImage');
+    const son = document.getElementById('monSon');
+
+    // Événement au clic sur l'image
+    image.addEventListener('click', function() {
+        son.currentTime = 0; // Remet le son au début
+        son.play(); // Joue le son
+    });
+</script>
+
+<script src="inscription.js"></script>
+
+</body>
+</html>
